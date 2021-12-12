@@ -18,7 +18,7 @@ const PageTitle = ({ title, button, borderBottom = true, children }) => {
           {button && (
             <Button
               href={isAuthenticated() ? '/questions/ask' : '/auth'}
-              primary
+              pri
             >
               Ask Question
             </Button>

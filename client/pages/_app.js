@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Router from 'next/router'
 import NProgress from 'nprogress'
-
 import useComponentVisible from '../hooks/useComponentVisible'
 import ModalContext from '../store/modal'
 import { AuthProvider } from '../store/auth'
 import { FetchProvider } from '../store/fetch'
 import { TagProvider } from '../store/tag'
+import Home from '../components/Home/home'
 
 import Modal from '../components/modal'
 import AuthForms from '../components/auth-forms'
@@ -35,6 +35,8 @@ function MyApp({ Component, pageProps }) {
   }
 
   return (
+    <>
+    <Home />
     <ModalContext.Provider
       value={{ ref, handleComponentVisible, setIsComponentVisible }}
     >
@@ -43,14 +45,15 @@ function MyApp({ Component, pageProps }) {
           <TagProvider>
             <Component {...pageProps} />
             {isComponentVisible && (
-              <Modal>
-                <AuthForms screen={authScreen} />
-              </Modal>
-            )}
-          </TagProvider>
-        </FetchProvider>
-      </AuthProvider>
-    </ModalContext.Provider>
+                <Modal>
+                  <AuthForms screen={authScreen} />
+                </Modal>
+              )}
+            </TagProvider>
+          </FetchProvider>
+        </AuthProvider>
+      </ModalContext.Provider>
+      </>
   )
 }
 

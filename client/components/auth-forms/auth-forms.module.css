@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .authModal {
   display: flex;
   flex-direction: column;
@@ -10,6 +12,20 @@
 }
 
 .authSwichMessage {
-  color: var(--black-700);
-  margin-top: 12px;
+  color: white;
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  margin-top: 20px;
+}
+
+.authSwichMessage a{
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: #78FFBE;
 }

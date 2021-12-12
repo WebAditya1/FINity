@@ -13,10 +13,10 @@ const AuthForms = ({ screen = 'signup' }) => {
   return (
     <div className={styles.authModal}>
       <Head>
-        <title>{form == 'login' ? 'Log In' : 'Sign Up'} - Clone of Stackoverflow</title>
+        <title>{form == 'login' ? 'Log In' : 'Sign Up'} - FINity</title>
       </Head>
 
-      <Logo className={styles.logo} />
+      {/* <Logo className={styles.logo} /> */}
 
       {form === 'login' ? <LoginForm /> : <SignUpForm />}
 

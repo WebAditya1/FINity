@@ -28,10 +28,10 @@
   min-width: 292px;
   max-height: 100%;
   padding: 50px;
-  border-radius: 7px;
-  background-color: var(--white);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09), 0 3px 8px rgba(0, 0, 0, 0.09),
-    0 4px 13px rgba(0, 0, 0, 0.13);
+  background: rgba(70, 66, 255, 0.71);
+  box-shadow: inset -11.1667px 11.1667px 11.1667px rgba(255, 255, 255, 0.029), inset 11.1667px -11.1667px 11.1667px rgba(149, 149, 149, 0.029);
+  backdrop-filter: blur(18.9833px);
+  border-radius: 16px;
   animation: modalDialog 0.5s ease;
 }
 

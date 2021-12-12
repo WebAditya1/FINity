@@ -19,30 +19,30 @@ const LoginForm = () => {
 
   return (
     <Formik
-      initialValues={{ username: '', password: '' }}
-      onSubmit={async (values, { setStatus, resetForm }) => {
-        setLoading(true)
-        try {
-          const { data } = await publicFetch.post('authenticate', values)
-          const { token, expiresAt, userInfo } = data
-          setAuthState({ token, expiresAt, userInfo })
-          resetForm({})
-          setIsComponentVisible(false)
-        } catch (error) {
-          setStatus(error.response.data.message)
-        }
-        setLoading(false)
-      }}
-      validationSchema={Yup.object({
-        username: Yup.string()
-          .required('Required')
-          .max(16, 'Must be at most 16 characters long')
-          .matches(/^[a-zA-Z0-9_-]+$/, 'Contains invalid characters'),
-        password: Yup.string()
-          .required('Required')
-          .min(6, 'Must be at least 6 characters long')
-          .max(50, 'Must be at most 50 characters long')
-      })}
+    initialValues={{ username: '', password: '' }}
+    onSubmit={async (values, { setStatus, resetForm }) => {
+      setLoading(true)
+      try {
+        const { data } = await publicFetch.post('authenticate', values)
+        const { token, expiresAt, userInfo } = data
+        setAuthState({ token, expiresAt, userInfo })
+        resetForm({})
+        setIsComponentVisible(false)
+      } catch (error) {
+        setStatus(error.response.data.message)
+      }
+      setLoading(false)
+    }}
+    validationSchema={Yup.object({
+      username: Yup.string()
+      .required('Required')
+      .max(16, 'Must be at most 16 characters long')
+      .matches(/^[a-zA-Z0-9_-]+$/, 'Contains invalid characters'),
+      password: Yup.string()
+      .required('Required')
+      .min(6, 'Must be at least 6 characters long')
+      .max(50, 'Must be at most 50 characters long')
+    })}
     >
       {({
         values,
@@ -55,10 +55,12 @@ const LoginForm = () => {
         isSubmitting
       }) => (
         <form onSubmit={handleSubmit} className={styles.form}>
+          <h1 className={styles.main}>Log in</h1>
           <FormInput
-            label="Username"
+            // label="Please Enter Username"
             type="text"
             name="username"
+            placeholder="Please Enter Username"
             autoComplete="off"
             value={values.username}
             onChange={handleChange}
@@ -67,9 +69,10 @@ const LoginForm = () => {
             errorMessage={errors.username && errors.username}
           />
           <FormInput
-            label="Password"
+            // label="Please Enter your Password"
             type="password"
             name="password"
+            placeholder="Please Enter Your Password"
             autoComplete="off"
             value={values.password}
             onChange={handleChange}
@@ -79,8 +82,6 @@ const LoginForm = () => {
           />
           <p className={styles.status}>{status}</p>
           <Button
-            primary
-            full
             className={styles.submitButton}
             type="submit"
             isLoading={loading}
