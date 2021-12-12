@@ -1,5 +1,5 @@
 .navItem {
-  color: var(--black-600);
+  color: white;
   padding: 8px 6px 8px 8px;
   display: flex;
   align-items: center;
@@ -10,8 +10,9 @@
   line-height: 1.5;
 
   &:hover {
-    color: var(--black-900);
+    color: #01ff85;
   }
+
   span {
     margin-left: 20px;
   }
@@ -26,7 +27,8 @@
 
 .navItemSelected {
   font-weight: bold;
-  background: var(--black-050);
-  color: var(--black-900);
-  border-right: 3px solid var(--orange);
+  color: #01ff85;
+  box-shadow: inset 4.23333px -4.23333px 4.23333px rgba(149, 149, 149, 0.1), inset -4.23333px 4.23333px 4.23333px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8.46667px);
+  border-radius: 4px;
 }

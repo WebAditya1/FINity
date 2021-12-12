@@ -1,10 +1,7 @@
 import React, { useContext } from 'react'
 import cn from 'classnames'
-
 import { AuthContext } from '../../store/auth'
-
 import Button from '../button'
-
 import styles from './page-title.module.css'
 
 const PageTitle = ({ title, button, borderBottom = true, children }) => {
@@ -18,7 +15,7 @@ const PageTitle = ({ title, button, borderBottom = true, children }) => {
           {button && (
             <Button
               href={isAuthenticated() ? '/questions/ask' : '/auth'}
-              pri
+              style={{color: "#6360FF",fontFamily: "Playfair Display",fontStyle: "normal", fontWeight: "900",fontSize: "14px",letterSpacing: "0.04em"}}
             >
               Ask Question
             </Button>

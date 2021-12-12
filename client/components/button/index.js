@@ -22,6 +22,7 @@ const BaseButton = ({ children, ...props }) => {
 
 const Button = ({
   primary,
+  pri,
   secondary,
   full = false,
   isLoading = false,

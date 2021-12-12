@@ -7,7 +7,7 @@ import { AuthProvider } from '../store/auth'
 import { FetchProvider } from '../store/fetch'
 import { TagProvider } from '../store/tag'
 import Home from '../components/Home/home'
-
+import Nav from '../navbar/Header'
 import Modal from '../components/modal'
 import AuthForms from '../components/auth-forms'
 
@@ -15,6 +15,7 @@ import '../styles/variables.css'
 import '../styles/nprogress.css'
 import 'react-tagsinput/react-tagsinput.css'
 import '../styles/app.css'
+import Header from '../components/layout/header'
 
 Router.events.on('routeChangeStart', () => NProgress.start())
 Router.events.on('routeChangeComplete', () => NProgress.done())
@@ -36,7 +37,6 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-    <Home />
     <ModalContext.Provider
       value={{ ref, handleComponentVisible, setIsComponentVisible }}
     >
